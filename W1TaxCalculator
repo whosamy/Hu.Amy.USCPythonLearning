@@ -1,1 +1,30 @@
+item1name = ("milk")
+item1price = 5
+item1quantity = 2
 
+item2name = ("banana")
+item2price = 2
+item2quantity = 3
+
+tax = 7.75
+
+#multiply price by quantity to get total price
+price1 = item1price * item1quantity
+price2 = item2price * item2quantity
+
+#add the costs together to get total cost
+totalcost = price1 + price2
+
+#multiply the total cost by tax to get the cost after tax
+costaftertax = totalcost * tax
+
+print ("Item 1: " + item1name)
+print ("Cost: $" + str(item1price))
+print ("Number purchased: " + str(item1quantity) + "\n")
+
+print ("Item 2: " + item2name)
+print ("Cost: $" + str(item2price))
+print ("Number purchased: " + str(item2quantity) + "\n")
+
+print ("Sales tax: " + str(tax) + "%")
+print ("Price after tax: $" + str(costaftertax))
