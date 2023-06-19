@@ -1,1 +1,14 @@
+print("Welcome to the Personalized Message Generator!" + "\n")
 
+firstname = input("Please enter your first name: ")
+lastname = input("Please enter your last name: ")
+age = input("Please enter your age: ")
+integer = input("Please enter an integer: ")
+color = input("Please enter your favorite color: ")
+
+print("\n" + "Hello,", firstname, lastname[0] + "!",
+      "Your name is", int(len(firstname)) + int(len(lastname)),
+      "characters long. In", int(integer), "years, you will be", int(age) + int(integer),
+      "years old. Your favorite color is", color.upper() + "!" + "\n")
+
+print("Thank you for using the Personalized Message Generator!")
