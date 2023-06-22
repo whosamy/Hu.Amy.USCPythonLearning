@@ -1,0 +1,34 @@
+age = int(input("Age: "))
+day = input("Day of Week: ")
+coupon = input("Coupon Code: ").upper()
+
+price = 0
+
+if age <= 5:
+    price = 0
+elif 6 <= age <= 17:
+    if day == ("Monday"):
+        price = 5
+    elif day == ("Tuesday") or ("Wednesday") or ("Thursday"):
+        price = 10
+    elif day == ("Friday") or ("Saturday") or ("Sunday"):
+        price = 15
+elif 18 <= age <= 64:
+    if day == ("Monday") or ("Tuesday") or ("Wednesday") or ("Thursday"):
+        price = 15
+    elif day == ("Friday") or ("Saturday") or ("Sunday"):
+        price = 25
+elif age >= 65:
+    if day == ("Monday") or ("Tuesday") or ("Wednesday") or ("Thursday"):
+        price = 10
+    elif day == ("Friday") or ("Saturday") or ("Sunday"):
+        price = 15
+
+if coupon == ("HALFOFF"):
+    totalprice = price / 2
+elif coupon == ("MINUS5") and price >= 5:
+    totalprice = price - 5
+else:
+    totalprice = price
+
+print("\n" + "Price: $" + str(totalprice))
