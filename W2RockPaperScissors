@@ -1,0 +1,34 @@
+import random
+
+actions = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+
+defeats = {
+    "Rock": ["Lizard", "Scissors"],
+    "Paper": ["Rock", "Spock"],
+    "Scissors": ["Paper", "Lizard"],
+    "Lizard": ["Paper", "Spock"],
+    "Spock": ["Rock", "Scissors"]
+}
+
+def generateComputerAction():
+    randomVariable = random.randint(0, 4)
+    randomAction = actions[randomVariable]
+    return randomAction
+
+userInput = int(input("Enter a number between 0 and 4:\n0 - Rock\n1 - Paper\n2 - Scissors\n3 - Lizard\n4 - Spock\n"))
+
+while userInput < 0 or userInput > 4:
+    userInput = int(input("Invalid input. Please enter a number between 0 and 4: "))
+
+userAction = actions[userInput]
+computerAction = generateComputerAction()
+
+print("User's action:", userAction)
+print("Computer's action:", computerAction)
+
+if userAction == computerAction:
+    print("It's a tie!")
+elif computerAction in defeats[userAction]:
+    print("You win!")
+else:
+    print("You lose!")
